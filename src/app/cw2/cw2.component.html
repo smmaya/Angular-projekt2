@@ -1,0 +1,49 @@
+<hr>
+<h3>Ćwiczenie 2</h3>
+<hr>
+<h5>Zadanie 1:</h5>
+<p>{{ title }}</p>
+  <ul>
+    <li *ngFor="let dzien of dniTygodnia">{{ dzien }}</li>
+  </ul>
+  
+  <p>Lista osób: Metoda 1:<p>
+  <ul>
+    <li *ngFor="let i of listaOsob">{{ i.imie }} {{ i.nazwisko }} {{ i.wiek }}
+    </li>
+  </ul>
+  <p>Lista osób: Metoda 2 z ng-template:<p>
+  <ul>
+    <li *ngFor="let i of students">{{ i.imie }} {{ i.wiek }}
+      <p *ngIf="i.czyStudent===true; then thenBlock else elseBlock"></p>
+      <ng-template #thenBlock><b>Tak</b></ng-template>
+      <ng-template #elseBlock><i style="text-decoration: line-through;">Nie</i></ng-template>
+    </li>
+  </ul>
+  <hr>
+  <h5>Zadanie 2:</h5>
+  <p>{{ title }}</p>
+  <ul>
+    <li *ngFor="let dzien of dniTygodnia">
+      <div *ngIf="dzien !== 'niedziela'">{{ dzien }}</div>
+      <div *ngIf="dzien === 'niedziela'">{{ dzien }} <b>- dziś odpoczywam</b></div>
+    </li>
+  </ul>
+  <p *ngIf="stanAplikacji[1]"><b>{{ stanAplikacji[1] }}</b></p>
+  <hr>
+  <h5>Zadanie 3:</h5>
+  <ul>
+    <li *ngFor="let i of listaOsob">{{ i.imie }} {{ i.nazwisko }} {{ i.wiek }}
+      <span *ngIf="i.wiek < 20 "> - nastolatek</span>
+      <span *ngIf="i.wiek > 60 "> - senior</span>
+    </li>
+  </ul>
+  <hr>
+  <h5>Zadanie 4:</h5>
+  <ul class="hideElement">
+    <li *ngFor="let i of students">
+      <div *ngIf="i.wiek < 20 && i.czyStudent == true || i.wiek > 60 && i.czyStudent == false; 
+        then thenBlock"></div>
+      <ng-template #thenBlock>{{ i.imie }} {{ i.wiek }}</ng-template>
+    </li>
+  </ul>

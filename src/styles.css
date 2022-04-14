@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+p {
+    margin: 3px 0 3px 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: normal;
+    color:black;
+}
+span {
+    margin: 3px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: normal;
+    color: darkblue;
+}
+li {
+    color:black;
+}
+h3 {
+    font-size: large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:darkred;
+    text-align: center;
+}
+h5 {
+    margin: 20px 0 10px 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:brown;
+}
+
+.hideElement {
+    margin-left: -30px;
+    list-style-type: none;
+}
+.btn {
+    width: 120px;
+}

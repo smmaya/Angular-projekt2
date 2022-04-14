@@ -1,0 +1,38 @@
+<hr>
+<h3>Ćwiczenie 4</h3>
+<hr>
+<h5>Zadanie 1:</h5>
+<p><b>Osoby które nie zdały egzaminu:</b></p>
+<div *ngIf="osoby?.length > 0; then wypiszOsoby; else brakOsob;"></div>
+<ng-template #wypiszOsoby>
+    <div *ngFor="let osoba of osoby">
+        <span>{{ osoba.imie }}</span>
+        <span *ngIf="osoba?.nazwisko">{{ osoba.nazwisko }}</span>ma
+        <span style="color: red;">{{osoba.wiek}}</span>
+        <span *ngIf="osoba.wiek % 10 > 4; then lat; else lata"></span>
+        <ng-template #lata>lata.</ng-template>
+        <ng-template #lat>lat.</ng-template>
+    </div>
+</ng-template>
+
+<ng-template #lat>lat.</ng-template>
+
+<ng-template #brakOsob>
+    <div>Brak osób do wyświetlenia.</div>
+</ng-template>
+<div *ngIf="osoby?.length !== 0; then dodano;"></div>
+<ng-template #dodano>
+    <div style="color: green;">Osoby zostały dodane.</div>
+</ng-template>
+<div *ngIf="usuwanie; then usunieto;"></div>
+<ng-template #usunieto>
+    <div style="color: red;">Osoby zostały usunięte.</div>
+</ng-template>
+
+<br>
+<div class="row mt-0 mb-3">
+<div class="col">
+    <span (click)="dodajOsoby()" class="btn btn-outline-secondary rounded">Dodaj osoby</span>
+    <span (click)="usunOsoby()" class="btn btn-outline-secondary rounded">Usuń osoby</span>
+</div>
+</div>

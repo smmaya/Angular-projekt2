@@ -1,0 +1,79 @@
+<hr>
+<h3>Ćwiczenie 3</h3>
+<hr>
+<h5>Zadanie 1:</h5>
+<p>{{ title }}</p>
+<div *ngFor="let dzien of dniTygodnia; let i = index">
+  <div [ngSwitch]="dzien">
+    <div *ngSwitchCase="'poniedziałek'">{{ i + 1 }}) {{ dzien }}</div>
+    <div *ngSwitchCase="'wtorek'">{{ i + 1 }}) {{ dzien }}</div>
+    <div *ngSwitchCase="'środa'">{{ i + 1 }}) {{ dzien }}</div>
+    <div *ngSwitchCase="'czwartek'">{{ i + 1 }}) {{ dzien }}</div>
+    <div *ngSwitchCase="'piątek'">{{ i + 1 }}) {{ dzien }}</div>
+    <div *ngSwitchCase="'sobota'">{{ i + 1 }}) {{ dzien }}</div>
+    <div *ngSwitchDefault>{{ i + 1 }}) {{ dzien }}</div>
+  </div>
+</div>
+<hr>
+<h5>Zadanie 2:</h5>
+<div *ngFor="let osoba of listaOsob; let i = index">
+  <div [ngSwitch]="osoba">
+    <div *ngSwitchCase="'pers1'">{{ i + 1 }}) {{ osoba.imie }} {{ osoba.nazwisko }}, wiek: {{ osoba.wiek }}</div>
+    <div *ngSwitchCase="'pers2'">{{ i + 1 }}) {{ osoba.imie }} {{ osoba.nazwisko }}, wiek: {{ osoba.wiek }}</div>
+    <div *ngSwitchCase="'pesr3'">{{ i + 1 }}) {{ osoba.imie }} {{ osoba.nazwisko }}, wiek: {{ osoba.wiek }}</div>
+    <div *ngSwitchDefault>{{ i + 1 }}) {{ osoba.imie }} {{ osoba.nazwisko }}, wiek: {{ osoba.wiek }}</div>
+  </div>
+</div>
+<hr>
+<h5>Zadanie 3:</h5>
+<p>{{ title }}</p>
+<ul>
+  <li *ngFor="let dzien of dniTygodnia; let isOdd = odd; let first = first; let last = last;">
+    <b>{{dzien}}</b>,
+    odd - <span *ngIf="isOdd == true" style="font-weight: bold; font-size: 9px; color: green;">{{isOdd}}</span>
+    <span *ngIf="isOdd == false" style="font-weight: normal; font-size: 9px; color: red;">{{isOdd}}</span>,
+    first - <span *ngIf="first == true" style="font-weight: bold; font-size: 9px; color: green;">{{first}}</span>
+    <span *ngIf="first == false" style="font-weight: normal; font-size: 9px; color: red;">{{first}}</span>,
+    last - <span *ngIf="last == true" style="font-weight: bold; font-size: 9px; color: green;">{{last}}</span>
+    <span *ngIf="last == false" style="font-weight: normal; font-size: 9px; color: red;">{{last}}</span>
+</ul>
+
+<div class="row">
+  <div class="col-6">
+    <p><b>Dni parzyste:</b></p>
+    <div *ngFor="let dzien of dniTygodnia; let i = index">
+      <div *ngIf="i % 2 !== 0" style="text-transform: capitalize;">
+        {{ dzien }}
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <p><b>Dni nieparzyste:</b></p>
+    <div *ngFor="let dzien of dniTygodnia; let i = index">
+      <div *ngIf="i % 2 == 0" style="text-transform: capitalize;">
+        {{ dzien }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mb-3"></div>
+
+<div class="row">
+  <div class="col-6">
+    <p><b>Pierwszy dzień:</b></p>
+    <div *ngFor="let dzien of dniTygodnia; let first = first; let i = index">
+      <div *ngIf="first" style="text-transform: capitalize;">
+        {{ dzien }}
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <p><b>Ostatni dzień tygodnia:</b></p>
+    <div *ngFor="let dzien of dniTygodnia; let last = last; let i = index">
+      <div *ngIf="last" style="text-transform: capitalize;">
+        {{ dzien }}
+      </div>
+    </div>
+  </div>
+</div>

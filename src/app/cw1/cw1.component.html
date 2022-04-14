@@ -1,0 +1,24 @@
+<hr>
+<h3>Ćwiczenie 1</h3>
+<hr>
+<h5>Zadanie 1:</h5>
+<p>To jest {{ title }}</p>
+<p>przykladowy tekst: {{ inputTekst | uppercase}}</p>
+<p>suma 2+2 = <b>{{ 2 + 2 }}</b></p>
+<p>Liczba E to: {{ liczbaE}}</p>
+<p>Dzisiejsza systemowa data:<br /><span>{{ date }}</span></p>
+<p>Nazywam się: <span>{{ osoba.imie }}</span></p>
+<p>Imię z wiekiem: <span>{{ osoba2.imie }}</span>, lat: <span>{{ osoba2.wiek }}</span></p>
+<p>Mój indeks to: <span>{{ indeks }}</span></p>
+<hr>
+<h5>Zadanie 2:</h5>
+<p>Liczba E to: {{ liczbaE | number: '1.3-3'}}</p>
+<p>Dzisiejsza data sformatowana: {{ date | date: 'dd/MM/yyyy' }}</p>
+<hr>
+<h5>Zadanie 3:</h5>
+<p>Liczba PI to: {{ pi }} lub {{ pi | number: '1.2-2'}}</p>
+<p>Osoba 1 to: {{osoba.imie}}, {{osoba.wiek}}</p>
+<p>Osoba 2 to: {{osoba3.imie}} {{osoba3.nazwisko}}, lat: {{osoba3.wiek}}</p>
+<hr>
+<h5>Zadanie 4:</h5>
+<p>Tablica: {{ tablica }}</p>
